@@ -1,0 +1,30 @@
+<app-overlay></app-overlay>
+<div class="container">
+  <div class="wrapper">
+    <h1>Đăng ký tập thể</h1>
+    <mat-divider></mat-divider>
+    <mat-form-field class="custom-mat-form-field" appearance="outline">
+      <mat-label>Họ tên</mat-label>
+      <input matInput placeholder="Placeholder" readonly [(ngModel)]="hoTenReadOnly">
+    </mat-form-field>
+    <mat-form-field class="custom-mat-form-field" appearance="outline">
+      <mat-label>Phòng ban</mat-label>
+      <input matInput placeholder="Placeholder" readonly [(ngModel)]="phongBanReadOnly">
+    </mat-form-field>
+    <mat-form-field class="custom-mat-form-field" appearance="outline">
+      <mat-label>Ngày đăng ký</mat-label>
+      <input matInput placeholder="Placeholder" readonly [(ngModel)]="ngayDkyReadOnly">
+    </mat-form-field>
+
+    <ul class="group-input">
+      <li *ngFor="let nv of dsNhanVien; let i = index">{{i+1}}.
+        <app-input-dang-ky-tap-the [nhanVien]="nv" (dataEmitter)="handleSoLuongDky($event)"></app-input-dang-ky-tap-the>
+      </li>
+    </ul>
+    <div class="action">
+      <button mat-raised-button color="primary" style="margin-right: 10px;" (click)="onSubmit()">Đăng ký</button>
+      <button mat-stroked-button color="warn" routerLink="/home">Cancel</button>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,68 @@
+<div class="sidenav" *ngIf="isLoggedIn == true">
+  <div>
+    <mat-expansion-panel
+      *ngIf="isUserAdmin==true"
+      (opened)="panelOpenStateQuanLy = true"
+      (closed)="panelOpenStateQuanLy = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Quản lý nhân sự
+        </mat-panel-title>
+
+      </mat-expansion-panel-header>
+      <div class="sidenav-item">
+        <a [routerLink]="['/nhanvien']">
+          Quản lý nhân viên
+        </a>
+      </div>
+      <mat-divider></mat-divider>
+      <div class="sidenav-item"><a [routerLink]="['/phongban']">
+        Quản lý phòng ban
+      </a></div>
+    </mat-expansion-panel>
+    <mat-expansion-panel
+      (opened)="panelOpenStateDangKy = true"
+      (closed)="panelOpenStateDangKy = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Đăng ký ca ăn
+        </mat-panel-title>
+
+      </mat-expansion-panel-header>
+      <div class="sidenav-item"><a [routerLink]="['/dangkycanhan']">
+        Đăng ký cá nhân
+      </a></div>
+      <mat-divider *ngIf="isCaNhanTapThe"></mat-divider >
+      <div class="sidenav-item"  *ngIf="isCaNhanTapThe"><a [routerLink]="['/dangkytapthe']">
+        Đăng ký tập thể
+
+      </a></div>
+    </mat-expansion-panel>
+    <mat-expansion-panel
+      (opened)="panelOpenStateThongKe = true"
+      (closed)="panelOpenStateThongKe = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Thống kê
+        </mat-panel-title>
+
+      </mat-expansion-panel-header>
+      <div class="sidenav-item"><a [routerLink]="['/thongkecanhan']">
+        Thống kê cá nhân
+      </a></div>
+      <mat-divider *ngIf="isUserAdmin==true"></mat-divider>
+      <div class="sidenav-item" *ngIf="isUserAdmin==true"><a [routerLink]="['/thongketheongay']">
+        Thống kê theo ngày
+      </a></div>
+
+      <mat-divider></mat-divider>
+      <div class="sidenav-item" *ngIf="isUserAdmin==true"><a [routerLink]="['/thongketheothang']">
+        Thống kê theo tháng
+      </a></div>
+    </mat-expansion-panel>
+
+
+  </div>
+
+
+</div>

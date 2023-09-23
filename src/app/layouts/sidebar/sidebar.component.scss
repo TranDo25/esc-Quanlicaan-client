@@ -1,0 +1,14 @@
+.sidenav{
+  width: 250px;
+  color: #fff;
+}
+.sidenav-item{
+  padding: 10px;
+}
+a {
+  color: inherit; /* Kế thừa màu chữ từ phần tử cha */
+  text-decoration: none; /* Loại bỏ gạch chân (underline) */
+}
+.mat-expansion-panel{
+  border-radius: 0px;
+}

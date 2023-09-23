@@ -1,0 +1,44 @@
+
+.main-body {
+  min-width: 1248px;
+  margin-top: 20px;
+  margin-left: 20px;
+  padding-top: 20px;
+  border-radius: 10px;
+
+  mat-form-field {
+    width: 100%;
+  }
+}
+
+mat-toolbar-row{
+  display: flex;
+  justify-content: space-between;
+  align-items: normal;
+}
+
+.content {
+  height: calc(100vh - 98px);
+  //height:1000px;
+  margin: 16px;
+  margin-left: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  color: lightgray;
+  border-radius: 10px;
+}
+
+.mat-column-upassword {
+  width: 150px; /* Đặt chiều rộng cố định cho cột, ví dụ: 150px */
+}
+
+.mat-cell {
+  white-space: normal; /* Cho phép wrap nội dung khi vượt quá chiều rộng */
+  word-break: break-word; /* Tách từ để wrap nội dung */
+}
+.filter_width{
+  width: 20%;
+  margin-left: 20px;
+}

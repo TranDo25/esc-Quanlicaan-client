@@ -1,0 +1,22 @@
+.content {
+  padding-top: 10px;
+  border-bottom: 1px solid #a1a1a1;
+  border-top: 1px solid black;
+}
+
+.row {
+  display: flex;
+  gap: 10px;
+
+  mat-form-field {
+    width: 100%;
+  }
+}
+
+.action {
+  padding: 20px 25px 20px;
+
+  button {
+    flex: 1
+  }
+}

@@ -1,0 +1,91 @@
+<div mat-dialog-title>
+  <h1>Nhân viên Form</h1>
+</div>
+<form [formGroup]="nvForm" (ngSubmit)="onFormSubmit()">
+
+  <div mat-dialog-content class="content">
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>Username</mat-label>
+        <input matInput type="text" placeholder="Nguyễn Văn A" formControlName="username"/>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input matInput type="text" placeholder="password" formControlName="password" [readonly]="isReadOnlyPassword"/>
+      </mat-form-field>
+    </div>
+
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>Quyền đăng ký</mat-label>
+        <mat-select formControlName="quyen">
+          <mat-option value="canhan">Cá nhân</mat-option>
+          <mat-option value="tapthe">Tập thể</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Quyền hệ thống</mat-label>
+        <mat-select formControlName="role">
+          <mat-option *ngFor="let role of listRoles" [value]="role">{{ role }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+    </div>
+    <div class="row">
+      <mat-radio-group aria-label="Trạng thái" formControlName="trangThai">
+        <mat-label><b>Trạng thái</b></mat-label>
+        <mat-radio-button [value]="true">Active</mat-radio-button>
+        <mat-radio-button [value]="false">Inactive</mat-radio-button>
+      </mat-radio-group>
+
+    </div>
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>Ngày sinh</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="ngaySinh"/>
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>Phòng ban</mat-label>
+        <mat-select formControlName="phongBanId">
+          <mat-option *ngFor="let department of listPhongBan"
+                      [value]="department.phongBanId">{{ department.phongBanName }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>Mã nhân viên</mat-label>
+        <input matInput type="text" placeholder="note..." formControlName="nhanVienCode"/>
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>Họ tên</mat-label>
+        <input matInput type="text" placeholder="note..." formControlName="nhanVienName"/>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Số điện thoại</mat-label>
+        <input matInput type="phone" placeholder="note..." formControlName="phone"/>
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput type="text" placeholder="note..." formControlName="email"/>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Địa chỉ</mat-label>
+        <input matInput type="text" placeholder="note..." formControlName="diaChi"/>
+      </mat-form-field>
+    </div>
+  </div>
+  <div mat-dialog-actions class="action">
+    <button mat-raised-button type="button" [mat-dialog-close]="false">Cancel</button>
+    <button mat-raised-button color="primary" type="submit">{{data ? 'Update' : 'Save'}}</button>
+  </div>
+</form>

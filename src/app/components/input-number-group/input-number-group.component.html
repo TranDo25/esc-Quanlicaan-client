@@ -1,0 +1,7 @@
+<mat-checkbox class="example-margin" [(ngModel)]="isChecked"  (ngModelChange)="onCheckboxChange($event)">
+</mat-checkbox>
+<mat-form-field appearance="outline">
+  <mat-label>{{ShiftName}}</mat-label>
+  <input matInput placeholder="Placeholder" type="number" min="0" max="3" [disabled]="!isChecked" [(ngModel)]="suatAnDky" (input)="onInputChange()">
+</mat-form-field>
+

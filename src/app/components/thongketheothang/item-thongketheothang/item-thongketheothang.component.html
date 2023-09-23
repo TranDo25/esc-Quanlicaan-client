@@ -1,0 +1,48 @@
+
+<div class="content">
+  <div>
+    <h1 style="font-style: italic">Phòng:&nbsp;{{tenPhongBan}}</h1>
+  </div>
+  <table class="table table-striped table-bordered ">
+    <thead>
+    <tr>
+      <th class="text-md-center border-right">STT</th>
+      <th class="text-md-center border-right">Họ tên</th>
+      <th class="text-md-center border-right">Ca 1</th>
+      <th class="text-md-center border-right">Ca 2</th>
+      <th class="text-md-center border-right">Ca 3</th>
+      <th class="text-md-center border-right">Tổng</th>
+      <th class="text-md-center border-right">Thành tiền</th>
+    </tr>
+    </thead>
+    <tbody>
+
+
+    <tr class=" text-md-center border-bottom" *ngFor="let item of data.dsThongKe; let i = index">
+      <td class="font-weight-bold">{{i+1}}</td>
+      <td>{{item.hoTen}}</td>
+      <td>{{item.slCa1}}</td>
+      <td>{{item.slCa2}}</td>
+      <td>{{item.slCa3}}</td>
+      <td>{{item.tongSoLuong}}</td>
+
+      <td>{{item.thanhTien|currencyFormat}}</td>
+    </tr>
+
+
+    <tr class="text-md-center border-bottom font-weight-bold">
+      <td></td>
+      <td>Tổng</td>
+      <td>{{countTongCa1}}</td>
+      <td>{{countTongCa2}}</td>
+      <td>{{countTongCa3}}</td>
+      <td>{{tongToanBo}}</td>
+      <td>{{tongThanhTien | currencyFormat}} </td>
+
+    </tr>
+
+    </tbody>
+
+  </table>
+
+</div>

@@ -1,0 +1,50 @@
+<app-base-thongke>
+  <div class="header_custom">
+    <h1>THỐNG KÊ CA ĂN THEO NGÀY</h1>
+  </div>
+  <div class="selectbox-container">
+    <label>Lọc theo ca:</label>
+    &nbsp;&nbsp;
+    <select (change)="onSelectChange($event)" >
+      <option selected value="all">Tất cả</option>
+      <option value="Ca 1">Ca 1</option>
+      <option value="Ca 2">Ca 2</option>
+      <option value="Ca 3">Ca 3</option>
+    </select>
+  </div>
+  <div class="group-control">
+    <div class="item-control">
+      <label for="startDate">Chọn ngày bắt đầu:</label>
+      <input type="date" id="startDate" [(ngModel)]="startDate">
+    </div>
+    <div class="item-control">
+      <label for="endDate">Chọn ngày kết thúc:</label>
+      <input type="date" id="endDate" [(ngModel)]="endDate">
+    </div>
+    <div>
+      <button class="btn btn-danger" (click)="onFindData()">Tìm kiếm</button>
+    </div>
+  </div>
+  <div class="content">
+    <ng-container *ngIf="dsThongKeCaAn.length == 0">
+      <h1 style="font-style: italic">Không có bản ghi nào thỏa mãn!</h1>
+    </ng-container>
+    <ng-container *ngIf="dsThongKeCaAn.length > 0">
+      <app-item-thongketheongay *ngFor="let item of dsThongKeCaAn"
+                                [shiftName]="item.tenCa"
+                                [totalMeals]="item.tongSoSuat"
+                                [totalMoneys]="item.tongTienTrongCa"
+                                [listDky]="item.dsDky"
+      ></app-item-thongketheongay>
+    </ng-container>
+
+  </div>
+
+
+</app-base-thongke>
+
+
+
+
+
+

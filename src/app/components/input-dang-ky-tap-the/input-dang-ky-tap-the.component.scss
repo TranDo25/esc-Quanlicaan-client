@@ -1,0 +1,22 @@
+.matInput:focus{
+ outline: none;
+}
+.input-group{
+  display: flex;
+  align-items: baseline;
+  width: 100%;
+  //justify-content: space-around;
+}
+.label-name{
+  width: 200px;
+  border: 1px solid #bbb;
+  padding: 10px;
+}
+.input-number-group{
+  margin-top: 10px;
+  box-sizing: border-box;
+  margin-left: 10px;
+  border: 1px solid #bbb;
+  padding: 10px;
+  padding-top: 25px;
+}

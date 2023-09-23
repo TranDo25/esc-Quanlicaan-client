@@ -1,0 +1,22 @@
+.background-image {
+  position: absolute;
+  top: 64px;
+  left: 251px;
+  width: calc(100vw - 251px);
+  height: calc(100vh - 64px);
+  background-image: url('/assets/home-page-qlac.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: -2; /* Đảm bảo nền mờ nằm phía sau nội dung */
+}
+.overlay{
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 64px;
+  left: 251px;
+  width: calc(100vw - 251px);
+  height: calc(100vh - 64px);
+  z-index: -1;
+}
+
+

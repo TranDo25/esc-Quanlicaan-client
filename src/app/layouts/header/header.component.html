@@ -1,0 +1,34 @@
+<div class="header-container">
+  <mat-toolbar style="background-color:#007A6D; color:white;">
+    <button mat-icon-button (click)="clickMenu()">
+      <mat-icon>menu</mat-icon>
+    </button>
+
+    <div class="header-container">
+      <!--  hiển thị tên app-->
+      <a [routerLink]="['/home']">
+        <span>{{title}}</span>
+      </a>
+      <a [routerLink]="['/nhanvien']" *ngIf="isUserAdmin && isLoggedIn">
+        Quản lý nhân viên
+      </a>
+      <a [routerLink]="['/phongban']" *ngIf="isUserAdmin && isLoggedIn">
+        Quản lý phòng ban
+      </a>
+      <a [routerLink]="['/dieuchinhthongtindangkyca3']" *ngIf="isUserAdmin && isLoggedIn">
+        Điều chỉnh thông tin
+      </a>
+    </div>
+    <a *ngIf="!isLoggedIn" [routerLink]="['/login']">
+      Đăng nhập
+    </a>
+    <a *ngIf="!isLoggedIn" [routerLink]="['/register']">
+      Đăng ký
+    </a>
+
+    <p class="username" *ngIf="isLoggedIn">Xin chào {{username}}</p>
+    <app-logout *ngIf="isLoggedIn" class="btn-logout"></app-logout>
+    <span class="example-spacer"></span>
+  </mat-toolbar>
+</div>
+

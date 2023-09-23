@@ -1,0 +1,29 @@
+<app-base-thongke>
+  <div class="header_custom">
+    <h1>THỐNG KÊ CA ĂN THEO THÁNG</h1>
+  </div>
+  <div class="group-control">
+    <div class="item-control">
+      <label for="inputMonthYear">Chọn ngày bắt đầu:</label>
+      <input type="month" id="inputMonthYear" [(ngModel)]="selectedMonth">
+    </div>
+
+    <div>
+      <button class="btn btn-danger" (click)="onFindData()">Tìm kiếm</button>
+    </div>
+  </div>
+  <ng-container *ngIf="dataFromApi.length === 0">
+
+    <h1 style="font-style: italic">Không có bản ghi thỏa mãn!</h1>
+  </ng-container>
+  <ng-container *ngIf="dataFromApi.length > 0">
+    <app-item-thongketheothang *ngFor="let item of dataFromApi; let i = index"
+                               [data]=item
+                               [stt]="i+1"
+    >
+    </app-item-thongketheothang>
+
+  </ng-container>
+
+
+</app-base-thongke>

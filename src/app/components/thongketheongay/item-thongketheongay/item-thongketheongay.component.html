@@ -1,0 +1,36 @@
+<div clas="whole-container" *ngIf="isDisplay">
+  <div class="info-container">
+    <p>{{shiftName}} </p>
+    <p>Tổng số suất:&nbsp;&nbsp;{{totalMeals}}</p>
+  </div>
+  <div class="table-container">
+    <table class="table table-bordered table-striped">
+      <thead>
+      <tr>
+        <th>STT</th>
+        <th>Họ tên người đăng ký</th>
+        <th>Số lượng</th>
+        <th>Thành tiền</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let item of listDky; let i=index">
+        <td>{{i + 1}}</td>
+        <td> {{item.hoTen}}</td>
+        <td> {{item.soLuong}}</td>
+        <td> {{item.thanhTien|currencyFormat}}</td>
+      </tr>
+
+      <tr>
+        <td></td>
+        <td><b>Tổng</b></td>
+        <td>{{totalMeals}}</td>
+        <td>{{totalMoneys|currencyFormat}}</td>
+      </tr>
+      </tbody>
+
+
+    </table>
+  </div>
+
+</div>

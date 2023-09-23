@@ -1,0 +1,15 @@
+
+.app-container{
+  display: flex;
+}
+.sidebar-container{
+  border-right: 1px solid #bbb;
+}
+.outlet-wrapper{
+  //background-color: #698fb7;
+  width: 100%;
+  height: calc(100vh - 64px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

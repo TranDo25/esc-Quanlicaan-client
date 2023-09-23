@@ -1,0 +1,25 @@
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+a {
+  color: inherit; /* Kế thừa màu chữ từ phần tử cha */
+  text-decoration: none; /* Loại bỏ gạch chân (underline) */
+  margin-left: 20px;
+}
+.header-container{
+  width: 100%;
+
+}
+.btn-logout{
+  float: right;
+}
+
+.header-container{
+  position:relative;
+}
+.username{
+  margin-top: 10px;
+  margin-right: 10px;
+}
+

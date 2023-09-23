@@ -1,0 +1,82 @@
+<app-base-thongke>
+  <div class="header_custom">
+    <h1>THỐNG KÊ CA ĂN CÁ NHÂN</h1>
+  </div>
+
+  <div class="info-container">
+    <div class="info-item">
+      <label class="label_width">Họ tên:</label>
+      <span>{{hoTen}}</span>
+    </div>
+    <div class="info-item">
+      <label>Phòng ban:</label>
+      <span>{{phonBanName}}</span>
+    </div>
+    <div class="info-item">
+      <label>Ngày xem:</label>
+      <span>{{ngayHienTai|dateFormat}}</span>
+    </div>
+  </div>
+  <div class="group-control">
+    <div class="item-control">
+      <label for="startDate">Chọn ngày bắt đầu:</label>
+      <input type="date" id="startDate" [(ngModel)]="startDate">
+    </div>
+    <div class="item-control">
+      <label for="endDate">Chọn ngày kết thúc:</label>
+      <input type="date" id="endDate" [(ngModel)]="endDate">
+    </div>
+    <div>
+      <button class="btn btn-danger" (click)="onFindData()">Tìm kiếm</button>
+    </div>
+  </div>
+  <div class="table-container">
+    <table class="table table-striped table-bordered">
+      <thead>
+      <tr class="">
+        <th class="text-md-center border-right">STT</th>
+        <th class="text-md-center border-right">Ngày</th>
+        <th class="text-md-center border-right">Ca 1</th>
+        <th class="text-md-center border-right">Ca 2</th>
+        <th class="text-md-center border-right">Ca 3</th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <tr *ngFor="let item of dataApi, let i = index">
+        <td class="text-md-center border-bottom font-weight-bold"><span>{{i + 1}}</span></td>
+        <td class="text-md-center border-bottom"><span>{{item.ngayDK|dateFormat}}</span></td>
+        <td class="text-md-center border-bottom"><span>{{item.soLuongCa1}}</span></td>
+        <td class="text-md-center border-bottom"><span>{{item.soLuongCa3}}</span></td>
+
+        <td class="text-md-center border-bottom"><span>{{item.soLuongCa2}}</span></td>
+      </tr>
+      <tr>
+        <td class="text-md-center border-bottom"></td>
+        <td class="text-md-center border-bottom  font-weight-bold">Tổng</td>
+        <td class="text-md-center border-bottom font-weight-bold">{{tongSoCa1}}</td>
+        <td class="text-md-center border-bottom font-weight-bold">{{tongSoCa3}}</td>
+        <td class="text-md-center border-bottom font-weight-bold">{{tongSoCa2}}</td>
+      </tr>
+
+      </tbody>
+
+
+    </table>
+
+  </div>
+  <div class="info-container">
+    <div class="info-item">
+      <label class="label_width">Tổng số lượng:</label>
+      <span>{{tongSoLuong}}</span>
+    </div>
+    <div class="info-item">
+      <label>Đơn giá:</label>
+      <span>{{donGia|currencyFormat}}</span>
+    </div>
+    <div class="info-item">
+      <label>Thành tiền:</label>
+      <span>{{thanhTien|currencyFormat}}</span>
+    </div>
+  </div>
+</app-base-thongke>

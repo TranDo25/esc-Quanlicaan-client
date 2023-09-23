@@ -1,0 +1,45 @@
+<app-overlay></app-overlay>
+<div class="container">
+  <div class="wrapper">
+    <h1>Đăng ký cá nhân</h1>
+    <mat-divider></mat-divider>
+    <mat-form-field class="custom-mat-form-field" appearance="outline">
+      <mat-label>Họ tên</mat-label>
+      <input matInput placeholder="Placeholder" readonly [(ngModel)]="hoTenReadOnly">
+    </mat-form-field>
+    <mat-form-field class="custom-mat-form-field" appearance="outline">
+      <mat-label>Phòng ban</mat-label>
+      <input matInput placeholder="Placeholder" readonly [(ngModel)]="phongBanReadOnly">
+    </mat-form-field>
+    <mat-form-field class="custom-mat-form-field" appearance="outline">
+      <mat-label>Ngày đăng ký</mat-label>
+      <input matInput placeholder="Placeholder" readonly [(ngModel)]="ngayDkyReadOnly">
+    </mat-form-field>
+    <div class="group-input">
+      <div>
+        <app-input-number-group ShiftName="Ca 1"
+                                (quantityChanged)="handleInputCa1Change($event)"></app-input-number-group>
+      </div>
+      <div>
+        <app-input-number-group ShiftName="Ca 2"
+                                (quantityChanged)="handleInputCa2Change($event)"></app-input-number-group>
+      </div>
+      <div>
+        <app-input-number-group ShiftName="Ca 3"
+                                (quantityChanged)="handleInputCa3Change($event)"></app-input-number-group>
+      </div>
+    </div>
+
+    <div class="action">
+      <button mat-raised-button color="primary" (click)="onSubmit()" style="margin-right: 10px;">Đăng ký</button>
+      <button mat-stroked-button color="warn" routerLink="/home">Cancel</button>
+    </div>
+
+  </div>
+
+
+</div>
+
+
+
+

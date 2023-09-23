@@ -1,0 +1,87 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "employees": [
+    {
+      "firstName": "Độ",
+      "lastName": "Trần Xuân",
+      "email": "dotrantb25@gmail.com",
+      "dob": "2023-03-06T17:00:00.000Z",
+      "gender": "male",
+      "department": "IT",
+      "note": "a.k.a ngài độ",
+      "so": "",
+      "id": 2
+    },
+    {
+      "firstName": "nguyễn nhật",
+      "lastName": "minh",
+      "email": "dotrantb25@gmail.com",
+      "dob": "2023-03-13T17:00:00.000Z",
+      "gender": "male",
+      "department": "Nhân sự",
+      "note": "cháu",
+      "so": 1,
+      "id": 3
+    },
+    {
+      "firstName": "nguyễn nhật",
+      "lastName": "minh",
+      "email": "dotrantb25@gmail.com",
+      "dob": "2023-03-13T17:00:00.000Z",
+      "gender": "male",
+      "department": "Nhân sự",
+      "note": "cháu",
+      "so": 1,
+      "id": 3
+    },
+    {
+      "firstName": "nguyễn nhật",
+      "lastName": "minh",
+      "email": "dotrantb25@gmail.com",
+      "dob": "2023-03-13T17:00:00.000Z",
+      "gender": "male",
+      "department": "Nhân sự",
+      "note": "cháu",
+      "so": 1,
+      "id": 3
+    },
+    {
+      "firstName": "nguyễn nhật",
+      "lastName": "minh",
+      "email": "dotrantb25@gmail.com",
+      "dob": "2023-03-13T17:00:00.000Z",
+      "gender": "male",
+      "department": "Nhân sự",
+      "note": "cháu",
+      "so": 1,
+      "id": 3
+    },
+    {
+      "firstName": "nguyễn nhật",
+      "lastName": "minh",
+      "email": "dotrantb25@gmail.com",
+      "dob": "2023-03-13T17:00:00.000Z",
+      "gender": "male",
+      "department": "Nhân sự",
+      "note": "cháu",
+      "so": 1,
+      "id": 3
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+.home-container{
+  min-width: calc(100vw - 251px);
+  min-height: calc(100vh - 65px);
+  //background-image: url("/assets/home-page-qlac.jpg");
+  //background-size: cover; /* Đảm bảo hình ảnh tự động điều chỉnh kích thước sao cho nó phù hợp với phần tử */
+  //background-repeat: no-repeat; /* Không lặp lại hình ảnh */
+}
+
+.jumbotron{
+  margin-top: 50px;
+  background-color: #CCE2CB;
+}

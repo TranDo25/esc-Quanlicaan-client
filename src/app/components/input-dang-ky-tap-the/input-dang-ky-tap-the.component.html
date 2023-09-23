@@ -1,0 +1,12 @@
+<div (change)="emitData()" class="input-group">
+  <div class="label-name">
+    <mat-label>{{hoTen}}</mat-label>
+
+  </div>
+  <div class="input-number-group">
+    <app-input-number-group ShiftName="Ca 1" (quantityChanged)="handleInputCa1($event)"></app-input-number-group>
+    <app-input-number-group ShiftName="Ca 2" (quantityChanged)="handleInputCa2($event)"></app-input-number-group>
+    <app-input-number-group ShiftName="Ca 3" (quantityChanged)="handleInputCa3($event)"></app-input-number-group>
+  </div>
+
+</div>

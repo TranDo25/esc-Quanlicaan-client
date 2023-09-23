@@ -1,0 +1,58 @@
+.container{
+  width: calc(100vw - 251px);
+  //margin-top:20px;
+  height: calc(100vh - 65px);
+  overflow: auto;
+  //background-color: #8077EA;
+  padding: 20px;
+}
+.wrapper{
+  box-sizing: border-box;
+  width: 100%;
+  padding: 20px;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2); /* X, Y, độ mờ, màu */
+  background-color: #fffdfd;
+
+}
+.row{
+  display: flex;
+  justify-content: space-around;
+}
+.custom-mat-form-field:not(:first-of-type) {
+  margin-left: 20px;
+}
+.custom-mat-form-field{
+  margin-top:20px;
+}
+.action{
+    //justify-items: flex-end;
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+.group-input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  //background-color: #8077EA;
+  border:1px solid #bbb;
+  padding: 20px;
+  border-radius: 4px;
+}
+
+li {
+  margin: 0;
+  padding: 0;
+  color: #333; /* Màu văn bản */
+  font-size: 16px; /* Kích thước font chữ */
+}
+ul {
+  list-style-type: none; /* Xóa dấu chấm */
+}
+
+
+

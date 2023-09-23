@@ -1,0 +1,41 @@
+
+.selectbox-container{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  //border: 1px solid #bbb;
+  padding: 10px;
+}
+
+.selectbox-container select{
+  padding: 5px;
+}
+.group-control{
+  display: flex;
+  margin-top: 20px;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+}
+.item-control input{
+  margin-left: 10px;
+  padding: 5px;
+}
+.table-container{
+  margin-top: 20px;
+}
+.content{
+  margin-top: 20px;
+  width: 100%;
+  //background-color: #698fb7;
+  padding: 20px;
+  border: 2px solid #bbb;
+}
+
+.header_custom{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
