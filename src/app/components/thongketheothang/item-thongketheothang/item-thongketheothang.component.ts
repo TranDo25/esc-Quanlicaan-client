@@ -24,8 +24,6 @@ export class ItemThongketheothangComponent implements OnInit {
   ngOnInit(): void {
     this.tenPhongBan = this.data.phongBanName;
     this.dsThongKe = this.data.dsThongKe;
-    console.log(this.data);
-    console.log(this.dsThongKe);
     for (let i = 0; i < this.dsThongKe.length; i++) {
       this.countTongCa1 += this.dsThongKe[i].slCa1;
       this.countTongCa2 += this.dsThongKe[i].slCa2;

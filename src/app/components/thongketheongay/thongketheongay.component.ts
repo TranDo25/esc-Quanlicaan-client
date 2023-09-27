@@ -48,7 +48,6 @@ export class ThongketheongayComponent {
         this._thongkeService.getInfoThongKeTheoNgay(data).subscribe({
           next: (val) => {
             this.dsThongKeCaAn = val;
-            console.log(val);
           },
           error: (err) => {
             console.log(err);

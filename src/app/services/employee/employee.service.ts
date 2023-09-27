@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
+import {environment} from "../../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
@@ -12,21 +13,21 @@ export class EmployeeService {
   }
 
   getListEmployeeByDepartmentId(id:string):Observable<any>{
-    return this._http.get(`http://localhost:8080/api/v1/nhanvien/listByDepartmentId/${id}`);
+    return this._http.get(`${environment.apiUrl}/nhanvien/listByDepartmentId/${id}`);
   }
   addEmployee(data: any): Observable<any> {
-    return this._http.post('http://localhost:8080/api/v1/nhanvien', data);
+    return this._http.post(`${environment.apiUrl}/nhanvien`, data);
   }
 
   getEmployeeList(): Observable<any> {
-    return this._http.get('http://localhost:8080/api/v1/nhanvien');
+    return this._http.get(`${environment.apiUrl}/nhanvien`);
   }
 
   deleteEmployee(id: string): Observable<any> {
-    return this._http.delete(`http://localhost:8080/api/v1/nhanvien/${id}`);
+    return this._http.delete(`${environment.apiUrl}/nhanvien/${id}`);
   }
 
   updateEmployee(id: string, data: any) {
-    return this._http.put(`http://localhost:8080/api/v1/nhanvien/${id}`, data);
+    return this._http.put(`${environment.apiUrl}/nhanvien/${id}`, data);
   }
 }

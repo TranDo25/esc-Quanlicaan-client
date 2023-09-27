@@ -1,0 +1,5 @@
+docker build -t escquanliancaclient:v1.0.3 .
+
+docker run --name angular-container -p 80:80 -d escquanlicaanclient:v1.0.0
+docker run --name angular-container -p 4200:80 -d escquanliancaclient:v1.0.6
+

@@ -32,7 +32,6 @@ export class DangkytaptheComponent implements OnInit {
 
   ngOnInit(): void {
     const loginUserString = localStorage.getItem('loginUser');
-    console.log(loginUserString);
     if (loginUserString) {
       const loginUser = JSON.parse(loginUserString);
       this.idNhanVien = loginUser.nhanVienId;
@@ -78,11 +77,9 @@ export class DangkytaptheComponent implements OnInit {
 
   getDsNhanVienByIdPhongBan() {
     const loginUserString = localStorage.getItem('loginUser');
-    console.log(loginUserString);
 
     if (loginUserString) {
       const loginUser = JSON.parse(loginUserString);
-      console.log(loginUser.phongBanId);
       this._nhanVienService.getListEmployeeByDepartmentId(loginUser.phongBanId).subscribe({
         next: (res) => {
           this.dsNhanVien = res;

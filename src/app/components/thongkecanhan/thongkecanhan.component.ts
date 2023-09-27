@@ -36,7 +36,6 @@ export class ThongkecanhanComponent implements OnInit {
   fetchDataFromApi() {
     const loginUserString = localStorage.getItem('loginUser');
     let userId = '';
-    console.log(loginUserString);
     if (loginUserString) {
       const loginUser = JSON.parse(loginUserString);
       userId = loginUser.nhanVienId;
@@ -79,7 +78,6 @@ export class ThongkecanhanComponent implements OnInit {
         this._thongKeService.getInfoThongKeCaNhan(data).subscribe({
           next: (res) => {
             this.dataApi = res;
-            // console.log(this.dataApi);
             this.tongSoCa1 = 0;
             this.tongSoCa2 = 0;
             this.tongSoCa3 = 0;

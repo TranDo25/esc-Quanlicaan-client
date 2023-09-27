@@ -63,11 +63,10 @@ export class NhanvienComponent implements OnInit {
     this._empService.getEmployeeList().subscribe({
 
       next: (res) => {
-        console.log(res);
+
         this.dataSource = new MatTableDataSource(res);
         this.dataSource.sort = this.sort;
         this.dataSource.paginator = this.paginator;
-        console.log(res);
       },
       error: (err) => {
         console.log(err)
@@ -110,7 +109,6 @@ export class NhanvienComponent implements OnInit {
   }
 
   openEditForm(data: any) {
-    console.log(data);
     const dialogRef = this._dialog.open(NhanvienAddEditComponent, {
       data,
     });

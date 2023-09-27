@@ -15,7 +15,7 @@ export class LoginService {
   }
 
   requestLogin(data: any): Observable<any> {
-    return this._http.post('http://localhost:8080/api/v1/auth/authenticate', data);
+    return this._http.post(`${environment.apiUrl}/auth/authenticate`, data);
   }
 
   getNhanVienByUsername(data: any): Observable<any> {

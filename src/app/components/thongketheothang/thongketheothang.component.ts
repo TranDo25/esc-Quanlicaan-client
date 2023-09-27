@@ -9,7 +9,7 @@ import {ThongkeService} from "../../services/thongke/thongke.service";
 export class ThongketheothangComponent implements OnInit {
   dataFromApi: any;
   selectedMonth: any = '';
-
+  dataLength = 0;
   onFindData() {
 // Chuyển giá trị từ input thành Date
     const dateValue = new Date(this.selectedMonth);
@@ -18,8 +18,6 @@ export class ThongketheothangComponent implements OnInit {
     const month = dateValue.getMonth() + 1; // +1 vì tháng trong JavaScript bắt đầu từ 0
     const year = dateValue.getFullYear();
 
-    console.log('Tháng:', month);
-    console.log('Năm:', year);
     const data = {
       "month": month,
       "year": year
@@ -38,7 +36,7 @@ export class ThongketheothangComponent implements OnInit {
     this._thongKeService.getInfoThongKeTheoThang(data).subscribe({
       next: (res) => {
         this.dataFromApi = res;
-
+        this.dataLength = this.dataFromApi.length;
       },
       error: (err) => {
         alert("error!");

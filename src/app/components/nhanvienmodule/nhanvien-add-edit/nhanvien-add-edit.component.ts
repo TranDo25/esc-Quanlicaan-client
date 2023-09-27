@@ -45,7 +45,6 @@ export class NhanvienAddEditComponent implements OnInit {
   ngOnInit() {
     this.getPhongBanList();
     this.getListRoles();
-    console.log(this.data.password);
     if(this.data.password != null){
       this.isReadOnlyPassword = true;
     }

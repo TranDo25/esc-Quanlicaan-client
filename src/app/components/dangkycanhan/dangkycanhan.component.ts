@@ -70,7 +70,6 @@ export class DangkycanhanComponent implements OnInit {
       },
       error: (err) => {
         alert('cannot get phongban name!');
-        console.log(err);
       }
     })
   }

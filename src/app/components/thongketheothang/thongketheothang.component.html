@@ -12,11 +12,11 @@
       <button class="btn btn-danger" (click)="onFindData()">Tìm kiếm</button>
     </div>
   </div>
-  <ng-container *ngIf="dataFromApi.length === 0">
+  <ng-container *ngIf="dataLength==0">
 
     <h1 style="font-style: italic">Không có bản ghi thỏa mãn!</h1>
   </ng-container>
-  <ng-container *ngIf="dataFromApi.length > 0">
+  <ng-container *ngIf="dataFromApi">
     <app-item-thongketheothang *ngFor="let item of dataFromApi; let i = index"
                                [data]=item
                                [stt]="i+1"
