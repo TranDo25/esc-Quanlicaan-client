@@ -9,3 +9,4 @@ WORKDIR /usr/share/nginx/html
 RUN rm -rf ./*
 COPY --from=node /ang/dist/quanlicaan-client .
 ENTRYPOINT ["nginx", "-g", "daemon off;"]
+EXPOSE 4200
