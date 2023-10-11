@@ -68,15 +68,18 @@ export class PhongbanComponent implements OnInit{
     })
   }
   deletePhongBan(id:string){
-    this._phongBanService.deletePhongBan(id).subscribe({
-      next:(res)=>{
-        this._coreService.openSnackBar('xóa phòng ban thành công');
-        this.getPhongBanList();
-      },
-      error:(err)=>{
-        alert('lỗi xóa phòng ban');
-        console.log(err);
-      }
-    })
+    const confirmDelete = window.confirm('Bạn có chắc chắn muốn xóa nhân viên này không?');
+    if(confirmDelete){
+      this._phongBanService.deletePhongBan(id).subscribe({
+        next:(res)=>{
+          this._coreService.openSnackBar('xóa phòng ban thành công');
+          this.getPhongBanList();
+        },
+        error:(err)=>{
+          alert('lỗi xóa phòng ban');
+          console.log(err);
+        }
+      })
+    }
   }
 }

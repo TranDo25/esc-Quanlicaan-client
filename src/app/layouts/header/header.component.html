@@ -1,21 +1,19 @@
 <div class="header-container">
   <mat-toolbar style="background-color:#007A6D; color:white;">
-    <button mat-icon-button (click)="clickMenu()">
-      <mat-icon>menu</mat-icon>
-    </button>
+
 
     <div class="header-container">
       <!--  hiển thị tên app-->
       <a [routerLink]="['/home']">
         <span>{{title}}</span>
       </a>
-      <a [routerLink]="['/nhanvien']" *ngIf="isUserAdmin && isLoggedIn">
+      <a [routerLink]="['/nhanvien']" [class]="custom_font" *ngIf="isUserAdmin && isLoggedIn">
         Quản lý nhân viên
       </a>
-      <a [routerLink]="['/phongban']" *ngIf="isUserAdmin && isLoggedIn">
+      <a [routerLink]="['/phongban']"  [class]="custom_font" *ngIf="isUserAdmin && isLoggedIn">
         Quản lý phòng ban
       </a>
-      <a [routerLink]="['/dieuchinhthongtindangkyca3']" *ngIf="isUserAdmin && isLoggedIn">
+      <a [routerLink]="['/dieuchinhthongtindangkyca3']" [class]="custom_font" *ngIf="isUserAdmin && isLoggedIn">
         Điều chỉnh thông tin
       </a>
     </div>

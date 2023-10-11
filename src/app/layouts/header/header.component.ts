@@ -15,6 +15,7 @@ export class HeaderComponent implements OnInit, DoCheck {
   isLoggedIn = true;
   username: any = '';
   isUserAdmin = false;
+  custom_font: any = 'smaller_font';
 
   constructor(private sideNavService: SideNavService, private authService: LoginService, private snackBar: MatSnackBar) {
 

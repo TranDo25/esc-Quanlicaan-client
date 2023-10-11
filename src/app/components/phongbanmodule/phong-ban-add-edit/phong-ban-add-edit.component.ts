@@ -1,9 +1,9 @@
 import {Component, Inject, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup} from "@angular/forms";
+import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 import {CoreService} from "../../../core/core.service";
 import {PhongbanserviceService} from "../../../services/phongban/phongbanservice.service";
-import {RoleService} from "../../../services/Roles/role.service";
+import {RoleService} from "../../../services/role/role.service";
 
 @Component({
   selector: 'app-phong-ban-add-edit',
@@ -20,12 +20,11 @@ export class PhongBanAddEditComponent implements OnInit{
     private _coreService:CoreService,
     private _fb: FormBuilder,
     private _phongBanService: PhongbanserviceService,
-    private _roleService: RoleService,
     private _dialogRef: MatDialogRef<PhongBanAddEditComponent>) {
     this.pbForm = this._fb.group({
-      phongBanId:'',
-      phongBanCode: '',
-      phongBanName: '',
+      phongBanId:new FormControl('',[Validators.required, Validators.minLength(6)]),
+      phongBanCode: new FormControl('',[Validators.required, Validators.minLength(6)]),
+      phongBanName: new FormControl('',[Validators.required, Validators.minLength(6)]),
     })
   }
 

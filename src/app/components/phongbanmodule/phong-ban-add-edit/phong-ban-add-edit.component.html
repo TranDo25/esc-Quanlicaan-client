@@ -8,13 +8,24 @@
       <mat-form-field appearance="outline">
         <mat-label>Mã phòng ban</mat-label>
         <input matInput type="text" placeholder="PB-001" formControlName="phongBanCode"/>
+        <mat-error *ngIf="pbForm.get('phongBanCode')?.errors?.['required']">
+          Thiếu mã phòng ban
+        </mat-error>
+        <mat-error *ngIf="pbForm.get('phongBanCode')?.errors?.['minlength']">
+          mã phòng ban nhỏ hơn 6 ký tự
+        </mat-error>
       </mat-form-field>
     </div>
     <div class="row">
       <mat-form-field appearance="outline">
         <mat-label>Tên phòng ban</mat-label>
         <input matInput type="text" placeholder="PB-001" formControlName="phongBanName"/>
-
+        <mat-error *ngIf="pbForm.get('phongBanName')?.errors?.['required']">
+          Thiếu tên phòng ban
+        </mat-error>
+        <mat-error *ngIf="pbForm.get('phongBanName')?.errors?.['minlength']">
+          tên phòng ban nhỏ hơn 6 ký tự
+        </mat-error>
       </mat-form-field>
     </div>
   </div>

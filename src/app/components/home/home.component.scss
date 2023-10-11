@@ -1,12 +1,15 @@
-.home-container{
+.home-container {
   min-width: calc(100vw - 251px);
+  max-width: 1536px;
   min-height: calc(100vh - 65px);
-  //background-image: url("/assets/home-page-qlac.jpg");
-  //background-size: cover; /* Đảm bảo hình ảnh tự động điều chỉnh kích thước sao cho nó phù hợp với phần tử */
-  //background-repeat: no-repeat; /* Không lặp lại hình ảnh */
+  height: 100%;
+  background-image: url("/assets/qlac-background-canva.png");
+  background-size: cover; /* Đảm bảo hình ảnh tự động điều chỉnh kích thước sao cho nó phù hợp với phần tử */
+  background-repeat: no-repeat; /* Không lặp lại hình ảnh */
 }
 
-.jumbotron{
-  margin-top: 50px;
+.jumbotron {
+  //margin-top: 50px;
   background-color: #CCE2CB;
 }
+

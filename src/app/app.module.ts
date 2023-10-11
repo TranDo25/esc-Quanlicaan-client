@@ -39,7 +39,7 @@ import { DangkytaptheComponent } from './components/dangkytapthe/dangkytapthe.co
 import { ThongkecanhanComponent } from './components/thongkecanhan/thongkecanhan.component';
 import { ThongketheongayComponent } from './components/thongketheongay/thongketheongay.component';
 import { ThongketheothangComponent } from './components/thongketheothang/thongketheothang.component';
-import { NotfoundComponent } from './components/notfound/notfound.component';
+import { NotfoundComponent } from './components/notfoundmodule/notfound.component';
 import {AuthenticationInterceptor} from "./services/authentication/interceptor";
 import { LogoutComponent } from './components/auth/logout/logout.component';
 import { RegisterComponent } from './components/auth/register/register.component';

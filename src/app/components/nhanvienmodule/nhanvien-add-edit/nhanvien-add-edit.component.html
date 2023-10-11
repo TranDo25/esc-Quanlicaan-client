@@ -8,10 +8,22 @@
       <mat-form-field appearance="outline">
         <mat-label>Username</mat-label>
         <input matInput type="text" placeholder="Nguyễn Văn A" formControlName="username"/>
+        <mat-error *ngIf="nvForm.get('username')?.errors?.['required']">
+          Thiếu username
+        </mat-error>
+        <mat-error *ngIf="nvForm.get('username')?.errors?.['minlength']">
+         username nhỏ hơn 6 ký tự
+        </mat-error>
       </mat-form-field>
       <mat-form-field appearance="outline">
         <mat-label>Password</mat-label>
-        <input matInput type="text" placeholder="password" formControlName="password" [readonly]="isReadOnlyPassword"/>
+        <input matInput type="text" placeholder="password" formControlName="password"/>
+        <mat-error *ngIf="nvForm.get('password')?.errors?.['required']">
+          Thiếu password
+        </mat-error>
+        <mat-error *ngIf="nvForm.get('password')?.errors?.['minlength']">
+          password nhỏ hơn 6 ký tự
+        </mat-error>
       </mat-form-field>
     </div>
 
@@ -22,12 +34,18 @@
           <mat-option value="canhan">Cá nhân</mat-option>
           <mat-option value="tapthe">Tập thể</mat-option>
         </mat-select>
+        <mat-error *ngIf="nvForm.get('quyen')?.errors?.['required']">
+          Thiếu quyền
+        </mat-error>
       </mat-form-field>
       <mat-form-field appearance="outline">
         <mat-label>Quyền hệ thống</mat-label>
         <mat-select formControlName="role">
           <mat-option *ngFor="let role of listRoles" [value]="role">{{ role }}</mat-option>
         </mat-select>
+        <mat-error *ngIf="nvForm.get('role')?.errors?.['required']">
+          Thiếu role
+        </mat-error>
       </mat-form-field>
 
     </div>
@@ -46,6 +64,9 @@
         <mat-hint>MM/DD/YYYY</mat-hint>
         <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
+        <mat-error *ngIf="nvForm.get('ngaySinh')?.errors?.['required']">
+          thiếu ngày sinh
+        </mat-error>
       </mat-form-field>
     </div>
     <div class="row">
@@ -55,32 +76,65 @@
           <mat-option *ngFor="let department of listPhongBan"
                       [value]="department.phongBanId">{{ department.phongBanName }}</mat-option>
         </mat-select>
+        <mat-error *ngIf="nvForm.get('phongBanId')?.errors?.['required']">
+          Thiếu phòng ban
+        </mat-error>
       </mat-form-field>
     </div>
     <div class="row">
       <mat-form-field appearance="outline">
         <mat-label>Mã nhân viên</mat-label>
         <input matInput type="text" placeholder="note..." formControlName="nhanVienCode"/>
+        <mat-error *ngIf="nvForm.get('nhanVienCode')?.errors?.['required']">
+          Thiếu mã nhân viên
+        </mat-error>
+
+        <mat-error *ngIf="nvForm.get('nhanVienCode')?.errors?.['minlength']">
+          mã nhân viên nhỏ hơn 6 ký tự
+        </mat-error>
       </mat-form-field>
+
     </div>
     <div class="row">
       <mat-form-field appearance="outline">
         <mat-label>Họ tên</mat-label>
         <input matInput type="text" placeholder="note..." formControlName="nhanVienName"/>
+        <mat-error *ngIf="nvForm.get('nhanVienName')?.errors?.['required']">
+          Thiếu tên nhân viên
+        </mat-error>
+
+        <mat-error *ngIf="nvForm.get('nhanVienName')?.errors?.['minlength']">
+          tên nhân viên nhỏ hơn 6 ký tự
+        </mat-error>
       </mat-form-field>
       <mat-form-field appearance="outline">
         <mat-label>Số điện thoại</mat-label>
         <input matInput type="phone" placeholder="note..." formControlName="phone"/>
+        <mat-error *ngIf="nvForm.get('phone')?.errors?.['required']">
+          Thiếu số điện thoại
+        </mat-error>
+        <mat-error *ngIf="nvForm.get('phone')?.hasError('phoneNumber')">
+          Số điện thoại không hợp lệ
+        </mat-error>
       </mat-form-field>
     </div>
     <div class="row">
       <mat-form-field appearance="outline">
         <mat-label>Email</mat-label>
         <input matInput type="text" placeholder="note..." formControlName="email"/>
+        <mat-error *ngIf="nvForm.get('email')?.errors?.['required']">
+          Thiếu email
+        </mat-error>
+        <mat-error *ngIf="nvForm.get('email')?.errors?.['pattern']">
+           email không hợp lệ
+        </mat-error>
       </mat-form-field>
       <mat-form-field appearance="outline">
         <mat-label>Địa chỉ</mat-label>
         <input matInput type="text" placeholder="note..." formControlName="diaChi"/>
+        <mat-error *ngIf="nvForm.get('diaChi')?.errors?.['required']">
+         thiếu địa chỉ
+        </mat-error>
       </mat-form-field>
     </div>
   </div>

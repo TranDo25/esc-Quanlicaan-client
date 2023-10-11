@@ -97,15 +97,23 @@ export class NhanvienComponent implements OnInit {
   }
 
   deleteEmployee(id: string) {
-    this._empService.deleteEmployee(id).subscribe({
-      next: (res) => {
-        this._coreService.openSnackBar('xóa nhân viên thành công', 'done')
-        this.getEmployeeList();
-      },
-      error: (err) => {
-        console.log(err)
-      }
-    })
+    // Sử dụng hộp thoại xác nhận để xác nhận việc xóa
+    const confirmDelete = window.confirm('Bạn có chắc chắn muốn xóa nhân viên này không?');
+
+    if (confirmDelete) {
+      this._empService.deleteEmployee(id).subscribe({
+        next: (res) => {
+          this._coreService.openSnackBar('Xóa nhân viên thành công', 'done');
+          this.getEmployeeList();
+        },
+        error: (err) => {
+          console.log(err);
+        }
+      });
+    } else {
+      // Người dùng đã hủy bỏ việc xóa
+      console.log('Xóa nhân viên đã bị hủy bỏ.');
+    }
   }
 
   openEditForm(data: any) {

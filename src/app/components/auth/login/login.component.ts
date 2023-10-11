@@ -30,12 +30,15 @@ export class LoginComponent implements OnInit {
   }
 
   onLogin() {
-    const email = this.loginForm.value.email;
-    const password = this.loginForm.value.password;
-    this.processsLogin({
-      "username": email,
-      "password": password
-    });
+    if(this.loginForm.valid){
+      const email = this.loginForm.value.email;
+      const password = this.loginForm.value.password;
+      this.processsLogin({
+        "username": email,
+        "password": password
+      });
+    }
+
 
   }
 

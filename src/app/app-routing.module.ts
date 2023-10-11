@@ -9,7 +9,7 @@ import {DangkytaptheComponent} from "./components/dangkytapthe/dangkytapthe.comp
 import {ThongkecanhanComponent} from "./components/thongkecanhan/thongkecanhan.component";
 import {ThongketheongayComponent} from "./components/thongketheongay/thongketheongay.component";
 import {ThongketheothangComponent} from "./components/thongketheothang/thongketheothang.component";
-import {NotfoundComponent} from "./components/notfound/notfound.component";
+import {NotfoundComponent} from "./components/notfoundmodule/notfound.component";
 import {LoginComponent} from "./components/auth/login/login.component";
 import {RegisterComponent} from "./components/auth/register/register.component";
 import {HasRoleGuard} from "./has-role.guard";
